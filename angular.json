@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-ssr-test": {
+    "ssr-angular-universal": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,18 +17,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-ssr-test/browser",
+            "outputPath": "dist/ssr-angular-universal/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -68,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-ssr-test:build:production"
+              "browserTarget": "ssr-angular-universal:build:production"
             },
             "development": {
-              "browserTarget": "angular-ssr-test:build:development"
+              "browserTarget": "ssr-angular-universal:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-ssr-test:build"
+            "browserTarget": "ssr-angular-universal:build"
           }
         },
         "test": {
@@ -89,20 +84,15 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/angular-ssr-test/server",
+            "outputPath": "dist/ssr-angular-universal/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -128,12 +118,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "angular-ssr-test:build:development",
-              "serverTarget": "angular-ssr-test:server:development"
+              "browserTarget": "ssr-angular-universal:build:development",
+              "serverTarget": "ssr-angular-universal:server:development"
             },
             "production": {
-              "browserTarget": "angular-ssr-test:build:production",
-              "serverTarget": "angular-ssr-test:server:production"
+              "browserTarget": "ssr-angular-universal:build:production",
+              "serverTarget": "ssr-angular-universal:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -141,18 +131,16 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-ssr-test:build:production",
-              "serverTarget": "angular-ssr-test:server:production"
+              "browserTarget": "ssr-angular-universal:build:production",
+              "serverTarget": "ssr-angular-universal:server:production"
             },
             "development": {
-              "browserTarget": "angular-ssr-test:build:development",
-              "serverTarget": "angular-ssr-test:server:development"
+              "browserTarget": "ssr-angular-universal:build:development",
+              "serverTarget": "ssr-angular-universal:server:development"
             }
           },
           "defaultConfiguration": "production"
@@ -160,5 +148,5 @@
       }
     }
   },
-  "defaultProject": "angular-ssr-test"
+  "defaultProject": "ssr-angular-universal"
 }

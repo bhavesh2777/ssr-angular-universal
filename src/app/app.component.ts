@@ -7,6 +7,6 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'angular-ssr-test';
+  title = 'ssr-angular-universal';
   constructor(@Inject(PLATFORM_ID) private platformId) {}
 }
